@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %meta{:content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}
+    %title CompleteCorporateStructures
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body.container
+    -if notice.present?
+      %div{class: 'alert alert-info'}
+        %a{href: '#', class: 'close',
+          'data-dismiss' => 'alert',
+          'aria-label' => 'close'}
+          &times;
+        =notice
+    -if alert.present?
+      %aside{class: 'alert alert-danger'}
+        %a{href: '#', class: 'close',
+          'data-dismiss' => 'alert',
+          'aria-label' => 'close'}
+          &times;
+        =alert
+
+    = yield
